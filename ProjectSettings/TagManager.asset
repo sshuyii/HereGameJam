@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - mask
   layers:
   - Default
   - TransparentFX
@@ -13,12 +14,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Now
+  - RemoteAncient
+  - Ancient
+  - Near
+  - VeryNear
+  - Mask
   - 
   - 
   - 
@@ -40,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: VeryNear
+    uniqueID: 3311105115
+    locked: 0
+  - name: Near
+    uniqueID: 3170492873
+    locked: 0
+  - name: Ancient
+    uniqueID: 3349593797
+    locked: 0
+  - name: RemoteAncient
+    uniqueID: 2237057631
+    locked: 0
+  - name: Now
+    uniqueID: 3396507265
     locked: 0
