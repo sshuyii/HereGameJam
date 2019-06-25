@@ -34,7 +34,7 @@ public class DragMask: MonoBehaviour{
 	    {
             if(isDragging){
                 currentCam.depth = curCamOriginDepth;
-                if(GameFlowManager.GFM.duringStage(5)){
+                if(GameFlowManager.GFM.duringStage(6)){
                     currMask.transform.localScale = curMaskOriginScale;
                 }
                 foreach(AudioSource au in _as){
@@ -50,7 +50,7 @@ public class DragMask: MonoBehaviour{
 	        {
 	            Vector3 offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - lastMousePosition;
 	            currMask.transform.position += offset;
-                if(GameFlowManager.GFM.duringStage(5)){
+                if(GameFlowManager.GFM.duringStage(6)){
                     if(currMask.transform.localScale.x < 100){
                         currMask.transform.localScale *= 1.1f;
                     }

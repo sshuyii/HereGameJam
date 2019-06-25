@@ -20,8 +20,8 @@ TagManager:
   - Near
   - VeryNear
   - Mask
-  - 
-  - 
+  - Start
+  - Empty
   - 
   - 
   - 
@@ -56,4 +56,10 @@ TagManager:
     locked: 0
   - name: Now
     uniqueID: 3396507265
+    locked: 0
+  - name: Start
+    uniqueID: 526394745
+    locked: 0
+  - name: Empty
+    uniqueID: 1180544887
     locked: 0
