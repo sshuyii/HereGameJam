@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class FollowMask : MonoBehaviour
 {
-    public float speed = 0.05f;
+    public float speed = 0.02f;
     public int Stage = 2;
     public string movingTriggerName = "maskA_edge";
     public string endingTriggerName = "PathLeftEnd";
-    private bool arrivedAtLeft = false;
+    [SerializeField]
+    private bool arrivedAtDes = false;
     private bool isWalking = false;
     //private Rigidbody _rb;
 
@@ -16,12 +17,12 @@ public class FollowMask : MonoBehaviour
     //     _rb = gameObject.GetComponent<Rigidbody>();
     // }
     void Start(){
-        isWalking = true;
+        isWalking = false;
     }
     void OnTriggerStay(Collider other)
     {
         if(GameFlowManager.GFM.duringStage(Stage)){
-            if(isWalking && !arrivedAtLeft){
+            if(isWalking && !arrivedAtDes){
                 if(other.gameObject.name == movingTriggerName){
                     //_rb.AddForce(Vector3.left*speed);
                     transform.Translate(Vector3.left*speed,transform.parent);
@@ -33,11 +34,24 @@ public class FollowMask : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == endingTriggerName){
-            arrivedAtLeft = true;
+            arrivedAtDes = true;
         }
     }
 
     public bool isAtEnd(){
-        return arrivedAtLeft;
+        return arrivedAtDes;
+    }
+
+    public void SetWalking(bool walking){
+        isWalking = walking;
+    }
+
+    public void ReSet(float _speed, int _Stage, string _movingTrigger, string _endingTrigger){
+        speed = _speed;
+        Stage = _Stage;
+        movingTriggerName = _movingTrigger;
+        endingTriggerName = _endingTrigger;
+        arrivedAtDes = false;
+        isWalking = false;
     }
 }

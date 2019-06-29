@@ -38,10 +38,10 @@ public class EaseInOutController : MonoBehaviour
     void Update()
     {
         if(animating){
-            if(Mathf.Abs(cur_alpha-to_alpha)<1e-4){
+            if(Mathf.Abs(cur_alpha-to_alpha)<1e-2){
                 cur_alpha = to_alpha;
                 animating = false;
-                if(Mathf.Abs(to_alpha)<1e-4){
+                if(Mathf.Abs(to_alpha)<1e-2){
                     gameObject.SetActive(false);
                 }
             }else{

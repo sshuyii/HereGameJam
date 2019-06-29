@@ -10,6 +10,10 @@ public class DragMask: MonoBehaviour{
     private GameObject currMask;
     private Vector3 lastMousePosition = Vector3.zero;
 
+    public bool Dragging(){
+        return isDragging;
+    }
+
     void Update(){
         if (Input.GetMouseButtonDown(0)) { //检测鼠标左键是否点击
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

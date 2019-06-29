@@ -63,3 +63,6 @@ TagManager:
   - name: Empty
     uniqueID: 1180544887
     locked: 0
+  - name: Front
+    uniqueID: 329516233
+    locked: 0
